@@ -6,16 +6,19 @@ import Saola from '../../assets/saola2.svg'
 import {homepageLoading} from '../../actions/pageActions'
 import { Link,useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
+import {selectPage} from '../../actions/pageActions'
 
 
 const Panel = (props) => {
-    const {mode,homepageLoading} = props
+    const {mode,homepageLoading,selectPage} = props
     const history = useHistory()
 
     const reroute = async () => {
         if(mode === 'fox'){
+            selectPage('works')
             history.push('/works')
         } else {
+            selectPage('bio')
             history.push('/bio')
         }
     }
@@ -40,5 +43,5 @@ const Panel = (props) => {
     )
 }
 
-const mapDispatchToProps = {homepageLoading}
+const mapDispatchToProps = {homepageLoading,selectPage}
   export default connect(null, mapDispatchToProps)(Panel)

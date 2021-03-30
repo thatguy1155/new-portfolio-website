@@ -5,7 +5,7 @@ const initialState = {
     slideshowView:{
         PassByWeb:[
             "https://live.staticflickr.com/65535/50968050097_1b905fb4eb_b.jpg",
-            "https://live.staticflickr.com/65535/50654293898_ac9429c5cc_b.jpg",
+            "https://live.staticflickr.com/65535/50654294098_f3d858dac8_b.jpg",
             "https://live.staticflickr.com/65535/50654293988_82e5aae718_b.jpg",
             "https://live.staticflickr.com/65535/50655031536_dfc9a95282_b.jpg",
             "https://live.staticflickr.com/65535/50655031541_99a3205afd_b.jpg"

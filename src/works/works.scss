@@ -56,6 +56,8 @@
         overflow: hidden;
         width: 680px;
         height: 400px;
+        margin-left:40px;
+        margin-top:40px;
         .centered-photo{
             position:absolute;
             top:0px;
@@ -219,6 +221,8 @@
         .photo-container{
             width: 680px;
             height: 200px;
+            margin-left:0px;
+            margin-top:0px;
             .centered-photo{
                 
                 // width:100%;
