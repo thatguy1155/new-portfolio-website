@@ -15,7 +15,6 @@ const FooterIcon = (props) => {
     }
     
     const modeSelector = (input) => {
-        console.log(colorParser())
         if (input === 'email'){
             return <Gmail fill={colorParser()} stroke={colorParser()}/>
         } else if (input === 'kakao') {

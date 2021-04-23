@@ -1,4 +1,5 @@
-import { SETINDEX,SETNEWINDEX,SETPROJECTVIEW } from '../actions/types'
+import { SETINDEX,SETNEWINDEX,SETPROJECTVIEW,IMAGELOADED } from '../actions/types'
+import{setHasLoaded} from '../actions/pageActions'
 
 
 const initialState = {
@@ -35,6 +36,8 @@ const initialState = {
             "https://live.staticflickr.com/65535/49889012982_d31242d79a_b.jpg"
         ]
     },
+    loadedImageIndex:[],
+    loadedImageStatus:false,
     slideshowTitle:{
         PassByWeb: "PassBy Web",
         PassByMobile: "PassBy Mobile",
@@ -77,7 +80,32 @@ const pageReducer = (state = initialState, action) => {
                 ...state,
                 selectedView:newProjectView
             }
-        
+        case IMAGELOADED:
+            const url = action.payload
+            console.log(url)
+            let loadedImageCount = state.loadedImageIndex
+            if(url !== "void" && !loadedImageCount.includes(url)){
+                loadedImageCount.push(url)
+            } else if (url === "void"){
+                console.log("fun")
+                loadedImageCount = []
+            }
+            const ceiling = state.slideshowView[state.selectedView].length
+            console.log(ceiling)
+            console.log(loadedImageCount.length)
+            let finality = state.loadedImageStatus
+            if(loadedImageCount.length === ceiling) {
+                finality = true
+            } else if (url === "void") {
+                finality = false
+            }
+            // loadedImageCount += 1
+            return{
+                ...state,
+                loadedImageIndex:loadedImageCount,
+                loadedImageStatus:finality
+            }
+    
         default:
             return state
     }

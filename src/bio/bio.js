@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import Avatar from './components/Avatar.js'
 import TextContent from './components/TextContent.js'
 import Loading from '../components/Loading.js'
@@ -18,12 +19,13 @@ const useStyles = makeStyles((theme) => ({
 
   
 
-export default function Home() {
+const Home = (props) => {
     const classes = useStyles();
-
+    const {hasLoaded} = props
+    
     return (
         <>
-        <div className="home-content">
+        <div className={hasLoaded ? "home-content" : "gone"}>
             <div className={classes.root}>
                 <Grid className={classes.gridContainer} container>
                     <Grid item xs={10} sm={6} md={3} >
@@ -35,6 +37,14 @@ export default function Home() {
                 </Grid>
             </div>
         </div>
+        <Loading className={hasLoaded ? "gone" : "visible"} />
         </>
     )
 }
+
+const mapStateToProps = state => ({
+    hasLoaded: state.page.hasLoaded
+  })
+ //const mapDispatchToProps = {setHasLoaded}
+
+  export default connect(mapStateToProps, null)(Home)

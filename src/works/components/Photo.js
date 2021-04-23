@@ -1,33 +1,43 @@
-import React,{useEffect} from 'react'
+import React,{useState,useEffect} from 'react'
 import { connect } from 'react-redux'
-import {setLoading} from '../../actions/pageActions'
-import {ReactComponent as Notebook} from '../../assets/notebook.svg'
-import Photo from './Photo'
+
+import {imageLoaded} from '../../actions/slideshowActions'
+
+
 
 const Photos = (props) => {
-    const {setLoading,url,loadedFrom} = props
+    const {imageLoaded,url,loadedFrom,} = props
 
     
-    useEffect(() => {
-        console.log(loadedFrom)
-    },[url])
+    
+    // useEffect(() => {
+    //     imageLoaded()
+    // },[loadedSwitch])
 
-    const directionParser = () => {
-        if (loadedFrom === 'left'){
-            return "centered-photo left"
-        } else if(loadedFrom === 'right'){
-            return "centered-photo right"
-        } else {
-            return "centered-photo center"
+    // const directionParser = () => {
+    //     if (loadedFrom === 'left'){
+    //         return "centered-photo left"
+    //     } else if(loadedFrom === 'right'){
+    //         return "centered-photo right"
+    //     } else {
+    //         return "centered-photo center"
+    //     }
+    // }
+    const imageLoadedFilter = () => {
+        let loadedSwitch = 0
+        while(loadedSwitch < 1){
+            
+            imageLoaded(url)
+            loadedSwitch += 1
         }
     }
 
     return (
         
-        <div className={directionParser()}>
-            <img src={url} alt="displayed" onLoad={() => setLoading(true)} className="photo"/>
+        <div className="centered-photo">
+            <img src={url} alt="displayed" onLoad={() => imageLoadedFilter()} className="photo"/>
         </div>
     )
 }
-  const mapDispatchToProps = {setLoading}
+  const mapDispatchToProps = {imageLoaded}
   export default connect(null, mapDispatchToProps)(Photos)

@@ -1,16 +1,16 @@
 import React,{useEffect} from 'react'
 import Panel from './components/Panel'
 import Loading from '../components/Loading'
-import {setLoading} from '../actions/pageActions'
+import {setHasLoaded} from '../actions/pageActions'
 import './Home.scss'
 import { connect } from 'react-redux'
 
 
 const Home = (props) => {
-    const {hasLoaded,homeLoaded,setLoading} = props
+    const {hasLoaded,homeLoaded,setHasLoaded} = props
 
     useEffect(() => {
-        setLoading(false)
+        setHasLoaded(false)
         //eslint-disable-next-line
     },[])
 
@@ -38,6 +38,6 @@ const mapStateToProps = state => ({
     hasLoaded: state.page.hasLoaded,
     homeLoaded: state.page.homepageLoading
   })
-  const mapDispatchToProps = {setLoading}
+  const mapDispatchToProps = {setHasLoaded}
 
   export default connect(mapStateToProps, mapDispatchToProps)(Home)

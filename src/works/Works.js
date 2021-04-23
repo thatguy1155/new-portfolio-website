@@ -3,13 +3,13 @@ import './works.scss';
 import Slideshow from './components/Slideshow'
 import SlideShowMenu from './components/SlideShowMenu'
 import Loading from '../components/Loading'
-import {setLoading} from '../actions/pageActions'
+import {setHasLoaded} from '../actions/pageActions'
 import { connect } from 'react-redux'
 
 const Works = (props) => {
-    const {hasLoaded,setLoading} = props
+    const {hasLoaded,setHasLoaded} = props
     useEffect(() => {
-        setLoading(false)
+        setHasLoaded(false)
         //eslint-disable-next-line
     },[])
     return (
@@ -25,6 +25,6 @@ const Works = (props) => {
 const mapStateToProps = state => ({
     hasLoaded: state.page.hasLoaded
   })
- const mapDispatchToProps = {setLoading}
+ const mapDispatchToProps = {setHasLoaded}
 
   export default connect(mapStateToProps, mapDispatchToProps)(Works)

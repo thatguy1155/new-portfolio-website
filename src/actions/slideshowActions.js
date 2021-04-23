@@ -1,5 +1,4 @@
-import { SETINDEX,SETNEWINDEX,SETPROJECTVIEW } from './types'
-import axios from 'axios'
+import { SETINDEX,SETNEWINDEX,SETPROJECTVIEW,IMAGELOADED } from './types'
 
 
 export const setIndex = (postData) => dispatch => {
@@ -15,9 +14,18 @@ export const setNewIndex = (postData) => dispatch => {
         payload: postData
     })
 }
+
 export const setProjectView = (postData) => dispatch => {
     dispatch({
         type: SETPROJECTVIEW,
+        payload: postData
+    })
+}
+
+export const imageLoaded = (postData) => dispatch => {
+    console.log("triggered")
+    dispatch({
+        type: IMAGELOADED,
         payload: postData
     })
 }

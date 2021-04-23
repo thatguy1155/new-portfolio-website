@@ -60,9 +60,9 @@ const ButtonAppBar = (props) => {
     selectContact(null)
   }
 
-  useEffect(() => {
-    console.log(selected)
-  },[selected])
+  // useEffect(() => {
+  //   console.log(selected)
+  // },[selected])
 
 
   return (

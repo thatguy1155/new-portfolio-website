@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Photos from './Photos'
+import PhotoReel from './PhotoReel'
 import {setNewIndex} from '../../actions/slideshowActions'
 import {ReactComponent as Prev} from '../../assets/prev.svg'
 import {ReactComponent as Next} from '../../assets/next.svg'
@@ -10,7 +11,7 @@ const MainDisplay = (props) => {
     return (
         <div className="main-display">
             <Prev className={index > 0 ? "pc-nav-button" :"hidden-nav"} style={{color:'#121212' }} onClick={() => setNewIndex(index - 1)}/>
-            <Photos />
+            <PhotoReel />
             <Next className={index < photos[view].length - 1 ? "pc-nav-button" : "hidden-nav"} style={{color:'#121212'}} onClick={() => setNewIndex(index + 1)}/>
             <div className="mobile-nav-buttons">
                 <Prev className={index > 0 ? "mobile-nav-button" :"hidden-nav"} style={{color:'#121212' }} onClick={() => setNewIndex(index - 1)}/>

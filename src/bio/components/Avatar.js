@@ -1,8 +1,10 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
+import {setHasLoaded} from '../../actions/pageActions'
+import { connect } from 'react-redux'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -20,16 +22,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ImageAvatars(props) {
+const ImageAvatars = (props) => {
   const classes = useStyles();
-  const {isMobile} = props
+  const {isMobile,setHasLoaded} = props
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('sm'));
+  useEffect(() => {
+      setHasLoaded(false)
+      //eslint-disable-next-line
+  },[])
 
 
   return (
     <div className={classes.root}>
-      <Avatar alt="James Glass Profile Pic" src="https://live.staticflickr.com/65535/49907430523_8d1f83272c_b.jpg" className={matches ? classes.large : classes.small} />
+      <Avatar alt="James Glass Profile Pic" src="https://live.staticflickr.com/65535/49907430523_8d1f83272c_b.jpg" onLoad={setHasLoaded(true)}className={matches ? classes.large : classes.small} />
     </div>
   );
 }
+
+const mapDispatchToProps = {setHasLoaded}
+export default connect(null, mapDispatchToProps)(ImageAvatars)

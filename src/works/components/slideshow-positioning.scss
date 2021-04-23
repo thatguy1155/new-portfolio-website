@@ -1,0 +1,361 @@
+
+  .zero{
+      position: relative;
+      top:0px;
+      left:0px;
+      display:flex;
+  }
+  .one-increase{
+    position: relative;
+    top:0px;
+    animation: up-to-one .1s linear;
+    animation-fill-mode: forwards;
+    display:flex;
+  }
+  .two-increase{
+    position: relative;
+    top:0px;
+    animation: up-to-two .1s linear;
+    animation-fill-mode: forwards;
+    display:flex;
+  }
+  .three-increase{
+    position: relative;
+    top:0px;
+    animation: up-to-three .1s linear;
+    animation-fill-mode: forwards;
+    display:flex;
+  }
+  .four-increase{
+    position: relative;
+    top:0px;
+    animation: up-to-four .1s linear;
+    animation-fill-mode: forwards;
+    display:flex;
+  }
+  .five-increase{
+    position: relative;
+    top:0px;
+    animation: up-to-five .1s linear;
+    animation-fill-mode: forwards;
+    display:flex;
+  }
+  .six-increase{
+    position: relative;
+    top:0px;
+    animation: up-to-six .1s linear;
+    animation-fill-mode: forwards;
+    display:flex;
+  }
+  .zero-decrease{
+    position: relative;
+    top:0px;
+    animation: down-to-zero .1s linear;
+    animation-fill-mode: forwards;
+    display:flex;
+  }
+  .one-decrease{
+    position: relative;
+    top:0px;
+    animation: down-to-one .1s linear;
+    animation-fill-mode: forwards;
+    display:flex;
+  }
+  .two-decrease{
+    position: relative;
+    top:0px;
+    animation: down-to-two .1s linear;
+    animation-fill-mode: forwards;
+    display:flex;
+  }
+  .three-decrease{
+    position: relative;
+    top:0px;
+    animation: down-to-three .1s linear;
+    animation-fill-mode: forwards;
+    display:flex;
+  }
+  .four-decrease{
+    position: relative;
+    top:0px;
+    animation: down-to-four .1s linear;
+    animation-fill-mode: forwards;
+    display:flex;
+  }
+  .five-decrease{
+    position: relative;
+    top:0px;
+    animation: down-to-five .1s linear;
+    animation-fill-mode: forwards;
+    display:flex;
+  }
+  
+  @keyframes up-to-one {
+    0% {
+      left:0px;
+    }
+    100% {
+      left:-680px
+    }
+  }
+
+  @keyframes up-to-two {
+    0% {
+      left:-680px;
+    }
+    100% {
+      left:-1360px
+    }
+  }
+
+  @keyframes up-to-three {
+    0% {
+      left:-1360px;
+    }
+    100% {
+      left:-2040px
+    }
+  }
+
+  @keyframes up-to-four {
+    0% {
+      left:-2040px;
+    }
+    100% {
+      left:-2720px
+    }
+  }
+
+  @keyframes up-to-five {
+    0% {
+      left:-2720px;
+    }
+    100% {
+      left:-3400px
+    }
+  }
+
+  @keyframes up-to-six {
+    0% {
+      left:-3400px;
+    }
+
+    100% {
+      left:-4080px
+    }
+  }
+
+  @keyframes down-to-zero {
+    0% {
+      left:-680px; 
+    }
+    100% {
+      left:0px
+    }
+  }
+
+  @keyframes down-to-one {
+    0% {
+      left:-1360px; 
+    }
+    100% {
+      left:-680px
+    }
+  }
+
+  @keyframes down-to-two {
+    0% {
+      left:-2040px; 
+    }
+    100% {
+      left:-1360px
+    }
+  }
+
+  @keyframes down-to-three {
+    0% {
+      left:-2720px;
+    }
+    100% {
+      left:-2040px
+    }
+  }
+
+  @keyframes down-to-four {
+    0% {
+      left:-3400px;
+    }
+    100% {
+      left:-2720px
+    }
+  }
+
+  @keyframes down-to-five {
+    0% {
+      left:-4080px;
+    }
+    100% {
+      left:-3400px
+    }
+  }
+
+  //mobile versions
+  @keyframes up-to-one-mobile {
+    0% {
+      left:0px;
+    }
+    100% {
+      left:-300px
+    }
+  }
+
+  @keyframes up-to-two-mobile {
+    0% {
+      left:-300px;
+    }
+    100% {
+      left:-600px
+    }
+  }
+
+  @keyframes up-to-three-mobile {
+    0% {
+      left:-600px;
+    }
+    100% {
+      left:-900px
+    }
+  }
+
+  @keyframes up-to-four-mobile {
+    0% {
+      left:-900px;
+    }
+    100% {
+      left:-1200px
+    }
+  }
+
+  @keyframes up-to-five-mobile {
+    0% {
+      left:-1200px;
+    }
+    100% {
+      left:-1500px
+    }
+  }
+
+  @keyframes up-to-six-mobile {
+    0% {
+      left:-1500px;
+    }
+    100% {
+      left:-1800px
+    }
+  }
+
+  @keyframes down-to-zero-mobile {
+    0% {
+      left:-300px; 
+    }
+    100% {
+      left:0px
+    }
+  }
+
+  @keyframes down-to-one-mobile {
+    0% {
+      left:-600px; 
+    }
+    100% {
+      left:-300px;
+    }
+  }
+
+  @keyframes down-to-two-mobile {
+    0% {
+      left:-900px; 
+    }
+    100% {
+      left:-600px
+    }
+  }
+
+  @keyframes down-to-three-mobile {
+    0% {
+      left:-1200px;
+    }
+    100% {
+      left:-900px
+    }
+  }
+
+  @keyframes down-to-four-mobile {
+    0% {
+      left:-1500px;
+    }
+    100% {
+      left:-1200px
+    }
+  }
+
+  @keyframes down-to-five-mobile {
+    0% {
+      left:-1800px;
+    }
+    100% {
+      left:-1500px
+    }
+  }
+
+  @media (min-width: 0px) and (max-width: 1000px) {
+    .one-increase{
+      animation: up-to-one-mobile .1s linear;
+      animation-fill-mode: forwards;
+    }
+    .two-increase{
+      animation: up-to-two-mobile .1s linear;
+      animation-fill-mode: forwards;
+    }
+    .three-increase{
+      animation: up-to-three-mobile .1s linear;
+      animation-fill-mode: forwards;
+    }
+    .four-increase{
+      animation: up-to-four-mobile .1s linear;
+      animation-fill-mode: forwards;
+    }
+    .five-increase{
+      animation: up-to-five-mobile .1s linear;
+      animation-fill-mode: forwards;
+    }
+    .six-increase{
+      animation: up-to-six-mobile .1s linear;
+      animation-fill-mode: forwards;
+    }
+    .zero-decrease{
+      animation: down-to-zero-mobile .1s linear;
+      animation-fill-mode: forwards;
+    }
+    .one-decrease{
+      animation: down-to-one-mobile .1s linear;
+      animation-fill-mode: forwards;
+    }
+    .two-decrease{
+      animation: down-to-two-mobile .1s linear;
+      animation-fill-mode: forwards;
+    }
+    .three-decrease{
+      animation: down-to-three-mobile .1s linear;
+      animation-fill-mode: forwards;
+    }
+    .four-decrease{
+      animation: down-to-four-mobile .1s linear;
+      animation-fill-mode: forwards;
+    }
+    .five-decrease{
+      animation: down-to-five-mobile .1s linear;
+      animation-fill-mode: forwards;
+    }
+    
+  }

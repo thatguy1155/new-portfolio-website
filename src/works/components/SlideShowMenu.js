@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react';
 import Typography from '@material-ui/core/Typography';
-import { setProjectView,setNewIndex,setIndex } from '../../actions/slideshowActions'
+import { setProjectView,setNewIndex,setIndex,imageLoaded } from '../../actions/slideshowActions'
+import { setHasLoaded } from '../../actions/pageActions'
 import { makeStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux'
 
@@ -18,18 +19,20 @@ const useStyles = makeStyles({
 });
 
 const SlideShowMenu = (props) => {
-    const {view,setProjectView,setIndex,setNewIndex} = props
+    const {view,setProjectView,setIndex,setNewIndex,setHasLoaded,imageLoaded} = props
     const classes = useStyles();
 
         useEffect(() => {
-        console.log(view)
+        // console.log(view)
     },[view])
 
     const clickHandler = (clickedProject) => {
-      console.log(clickedProject)
-        setProjectView(clickedProject)
+      // console.log(clickedProject);
+        setProjectView(clickedProject);
         setNewIndex(0);
-        setIndex(0)
+        setIndex(0);
+        setHasLoaded(false);
+        imageLoaded("void")
     }
 
     const slideshowPages = {
@@ -57,7 +60,7 @@ const SlideShowMenu = (props) => {
 const mapStateToProps = state => ({
     view: state.slideshow.selectedView
   })
-const mapDispatchToProps = {setProjectView,setNewIndex,setIndex}
+const mapDispatchToProps = {setProjectView,setNewIndex,setIndex,setHasLoaded,imageLoaded}
   
   export default connect(mapStateToProps, mapDispatchToProps)(SlideShowMenu)
   
