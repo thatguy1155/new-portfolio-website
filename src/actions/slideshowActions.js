@@ -23,7 +23,6 @@ export const setProjectView = (postData) => dispatch => {
 }
 
 export const imageLoaded = (postData) => dispatch => {
-    console.log("triggered")
     dispatch({
         type: IMAGELOADED,
         payload: postData

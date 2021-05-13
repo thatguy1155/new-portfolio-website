@@ -8,16 +8,38 @@ h1{
     flex-direction: row;
     justify-content: space-between;
     width:100%;
+    // -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+    // -moz-animation: fadein 1s; /* Firefox < 16 */
+    // animation: fadein 1s;
 }
 .panel{
     padding:10px;
     border:0;
     border-radius: 30px;
     background-color: #fbfaf4;
+    position:relative;
+    z-index:1;
+    cursor: pointer;
 }
-.panel:hover{
-    background-color: aliceblue;
-}
+.panel:after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    background: rgba(246,251,255,0.2);
+    border-radius: 20px;
+    width: 0;
+    height: 0;
+    transition: all .01s;
+    z-index:-1;
+    
+  }
+  .panel:hover:after {
+    width: 100%;
+    height: 100%;
+    background: rgba(246,251,255,0.8);
+  }
 .panel-image{
     width:100%;
 }

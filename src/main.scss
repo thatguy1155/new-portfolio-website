@@ -115,7 +115,7 @@
     animation:blue-expand 1s linear infinite
   }
 }
-
+//loading component keyframes
 @keyframes red-expand {
   0% {
     top:28px;
@@ -227,6 +227,33 @@
       z-index:13;
     }
 }
+
+//fade-in-keyframes
+
+//add lines below to any element that you want to fade in
+// -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+// -moz-animation: fadein 2s; /* Firefox < 16 */
+//      animation: fadein 2s;
+// }
+
+@keyframes fadein {
+from { opacity: 0; }
+to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+from { opacity: 0; }
+to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+from { opacity: 0; }
+to   { opacity: 1; }
+}
+
+
 
 
 

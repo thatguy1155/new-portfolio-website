@@ -1,6 +1,9 @@
 .home-content{
     display:flex;
     justify-content: center;
+    -webkit-animation: fadein .5s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein .5s; /* Firefox < 16 */
+    animation: fadein .5s;
     .home-text{
         display: flex;
         text-align: left;

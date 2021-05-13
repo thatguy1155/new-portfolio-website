@@ -24,7 +24,6 @@ const Panel = (props) => {
     }
 
     const setLoading = () => {
-        console.log('did shit')
         if (mode === 'fox'){
             homepageLoading('panel2')
         } else {

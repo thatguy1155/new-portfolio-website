@@ -5,11 +5,13 @@ import SlideShowMenu from './components/SlideShowMenu'
 import Loading from '../components/Loading'
 import {setHasLoaded} from '../actions/pageActions'
 import { connect } from 'react-redux'
+import { imageLoaded } from '../actions/slideshowActions';
 
 const Works = (props) => {
-    const {hasLoaded,setHasLoaded} = props
+    const {hasLoaded,setHasLoaded,imageLoaded} = props
     useEffect(() => {
         setHasLoaded(false)
+        imageLoaded("void")
         //eslint-disable-next-line
     },[])
     return (
@@ -25,6 +27,6 @@ const Works = (props) => {
 const mapStateToProps = state => ({
     hasLoaded: state.page.hasLoaded
   })
- const mapDispatchToProps = {setHasLoaded}
+ const mapDispatchToProps = {setHasLoaded,imageLoaded}
 
   export default connect(mapStateToProps, mapDispatchToProps)(Works)

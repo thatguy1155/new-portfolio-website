@@ -38,12 +38,20 @@ const initialState = {
     },
     loadedImageIndex:[],
     loadedImageStatus:false,
+    //The syntax for the next objects match the possible syntax of the selectedView
     slideshowTitle:{
         PassByWeb: "PassBy Web",
         PassByMobile: "PassBy Mobile",
         Petpeeps:"Pet Peeps",
         NoraeCheck:"NoraeCheck",
         SPPS:"Saint Paul Preperatory School"
+    },
+    slideshowLink:{
+        PassByWeb: "https://passbykorea.com/",
+        PassByMobile: null,
+        Petpeeps:"https://github.com/thatguy1155/petpeeps",
+        NoraeCheck:"https://github.com/eunhyekim224/noraecheck",
+        SPPS:"https://github.com/thatguy1155/school_brochure"
     },
     slideshowText:{
         PassByWeb: "The PassBy website funtions as both a promotional/informative site for our our userbase as well as an online portal for partnering businesses to promote new deals through the app. I made the site independantly using React/Typescript with Firebase/Firestore as a backend and Context for state management. While the business portal will be available when the app is officially launched, the promotional site is deployed at passbykorea.com",
@@ -82,17 +90,13 @@ const pageReducer = (state = initialState, action) => {
             }
         case IMAGELOADED:
             const url = action.payload
-            console.log(url)
             let loadedImageCount = state.loadedImageIndex
             if(url !== "void" && !loadedImageCount.includes(url)){
                 loadedImageCount.push(url)
             } else if (url === "void"){
-                console.log("fun")
                 loadedImageCount = []
             }
             const ceiling = state.slideshowView[state.selectedView].length
-            console.log(ceiling)
-            console.log(loadedImageCount.length)
             let finality = state.loadedImageStatus
             if(loadedImageCount.length === ceiling) {
                 finality = true

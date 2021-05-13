@@ -8,7 +8,7 @@ export const selectPage = (postData) => dispatch => {
     })
 }
 export const setHasLoaded = (postData) => dispatch => {
-    console.log("setLoading is " + postData.toString())
+    // console.log("setLoading is " + postData.toString())
     dispatch({
         type: LOADING,
         payload: postData

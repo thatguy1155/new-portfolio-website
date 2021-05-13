@@ -1,1 +1,20 @@
-{}
+{
+    "home-button":"home",
+    "bio-button":"bio",
+    "works-botton":"works",
+    
+    "my-work":"my work",
+    "my-life":"my life",
+
+    "footer":"get in touch with me here",
+    
+    "bio-title":"Bio",
+    "bio-text1":"Hello, my name is James Glass. I was born and raised in Mountain View, California in the San Francisco Bay Area. I have always been interested in Art and Design, which I studied at Hampshire College in Amherst, Massachusetts. After college, I lived in Brooklyn, NY. Two years later, my thirst for adventure sent me to Seoul, South Korea where I initially worked as an English teacher and freelance Web Designer.",
+    "bio-text2":"These days, I have been working as a Front-End developer for PassBy Korea. My work has included individual projects in addition to larger Agile development work as part of a team of developers. I am proficient in HTML/CSS, Javascript/Typescript, Dart, Python, PHP, SQL as well as various frameworks such as Flutter, React, Vue, Node.Js and Flask. Thank You for checking out my website!",
+
+    "passby-web-text":"The PassBy website funtions as both a promotional/informative site for our our userbase as well as an online portal for partnering businesses to promote new deals through the app. I made the site independantly using React/Typescript with Firebase/Firestore as a backend and Context for state management. While the business portal will be available when the app is officially launched, the promotional site is deployed at passbykorea.com",
+    "passby-mobile-text":"The PassBy mobile application is a dating/social networking app that uses Dart/Flutter for the frontend and Dart/Firebase for the backend using an MVC design pattern. My initial role has been to work as a liason between the front-end and back-end where I've been connecting the UI elements to the controller functions and modifying both so that they work more efficiently. I've also done several other front-end taks such as building the language selection page or backend tasks such as checking to see if someone if using the app for the first time.",
+    "petpeeps-text":"PetPeeps is a web application for helping pet owners find pubs, restaurants and cafes where they can take their pets. The front-end of the project uses Vue.js with vuetify design components and vuex state management. The front end communicates with a REST-API via axios to the PHP-based backend and MYSQL database. It also uses Google Firebase OATH authentication and google maps API for plotting businesses on a map. In this project I’ve used Firebase to create and store user information and to create accounts using the users google account. I’ve created the PHP backend that stores user info in our database. I’ve also created interactive forms that make calls to both our backend and to the vuex store to make fast reactive displays. I’ve also worked on many design components such as the login and signup pages.",
+    "NoraeCheck-text":"NoraeCheck is an app to help people look up the song codes for their favorite songs at noraebang, create custom playlists and do randomized singing challenges with their friends. I’ve had many different roles in the application. I designed the layout of the search and search pages using a combination of HTML/CSS and Javascript. I’ve used Javascript XMLHTTPREQUESTS to retrieve songs from an API. I used PHP to make the login and signup features. I also used a PHP-based MVC framework to connect users with both the correct pages and the contents of our MYSQL database where we stored user information, songs and playlists. I’ve also written many SQL queries for reading and updating information from these databases.",
+    "spps-text":"This is an earlier project where I took a paper brochure for the Saint Paul Preperatory School and made a wedbsite out of it using only HTML/CSS"
+}
