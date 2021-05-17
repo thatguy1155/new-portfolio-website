@@ -18,5 +18,27 @@
         "react"
     ],
     "rules": {
+        "no-unused-vars": "warn",
+        "react/prop-types": "warn",
+        "react/jsx-filename-extension":"off",
+        "no-shadow":"warn",
+        "react/button-has-type":"warn",
+        "no-use-before-define":"warn",
+        "import/order":"warn",
+        "import/no-extraneous-dependencies":"warn",
+        "import/named":"warn",
+        "no-case-declarations":"warn",
+        "jsx-a11y/click-events-have-key-events":"warn",
+        "jsx-a11y/no-noninteractive-element-interactions":"warn",
+        "import/extensions":"warn",
+        "import/prefer-default-export":"warn",
+        "react/react-in-jsx-scope":"warn",
+        "no-unused-expressions":"warn",
+        "max-len":"warn"
+
+
+
+
+
     }
 }
