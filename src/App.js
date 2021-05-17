@@ -22,7 +22,7 @@ const styles = theme => ({
   
 });
 
-const style = withStyles(styles)
+const style = withStyles(styles);
 //for media queries
 const theme = createMuiTheme();
 
@@ -30,21 +30,20 @@ function App({classes}) {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-      <div className="App">
-      <Router>
+        <div className="App">
+          <Router>
             <AppBar />
             <div className={classes.appBarSpacer}></div>
             <div className="main-content">
-                <Switch>
-                  <Route exact path="/" component={Home} />
-                    <Route exact path="/bio" component={Bio} />
-                    <Route exact path="/works" component={Works} />
-                </Switch>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/bio" component={Bio} />
+                <Route exact path="/works" component={Works} />
+              </Switch>
             </div>
             <Footer />
-      </Router>
-      
-      </div>
+          </Router>
+        </div>
       </ThemeProvider>
     </Provider>
   );
