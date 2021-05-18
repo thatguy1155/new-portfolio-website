@@ -1,9 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
 import { makeStyles } from '@material-ui/core/styles';
-import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,6 +30,12 @@ const SlideIndicator = (props) => {
       {photos[view].map((item, index) => (selectedIndex === index ? <RadioButtonCheckedIcon className={classes.root} key={item} style={{ color: '#121212' }} /> : <RadioButtonUncheckedIcon className={classes.root} key={item} style={{ color: '#121212' }} />))}
     </div>
   );
+};
+
+SlideIndicator.propTypes = {
+  view: PropTypes.string.isRequired,
+  photos: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
+  selectedIndex: PropTypes.number.isRequired,
 };
 
 const mapStateToProps = (state) => ({

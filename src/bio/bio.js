@@ -1,13 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Avatar from './components/Avatar.js';
-import TextContent from './components/TextContent.js';
-import Loading from '../components/Loading.js';
+import Avatar from './components/Avatar';
+import TextContent from './components/TextContent';
+import Loading from '../components/Loading';
 import './bio.scss';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
   },
@@ -17,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Home = (props) => {
+const Bio = (props) => {
   const classes = useStyles();
   const { hasLoaded } = props;
 
@@ -45,4 +46,7 @@ const mapStateToProps = (state) => ({
 });
 // const mapDispatchToProps = {setHasLoaded}
 
-export default connect(mapStateToProps, null)(Home);
+Bio.propTypes = {
+  hasLoaded: PropTypes.bool.isRequired,
+};
+export default connect(mapStateToProps, null)(Bio);

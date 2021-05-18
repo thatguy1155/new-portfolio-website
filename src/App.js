@@ -1,11 +1,13 @@
+import React from 'react';
 import './App.css';
 import './main.scss';
 import { Provider } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
-  createMuiTheme, ThemeProvider, useTheme, withStyles,
+  createMuiTheme, ThemeProvider, withStyles,
 } from '@material-ui/core/styles';
 import {
-  Route, Link, Switch, BrowserRouter as Router,
+  Route, Switch, BrowserRouter as Router,
 } from 'react-router-dom';
 import AppBar from './components/AppBar';
 import Footer from './components/Footer';
@@ -51,4 +53,7 @@ function App({ classes }) {
     </Provider>
   );
 }
+App.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+};
 export default style(App);

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setIndex } from '../../actions/slideshowActions';
 import { ReactComponent as Notebook } from '../../assets/notebook.svg';
@@ -44,14 +45,20 @@ const Photos = (props) => {
       <div className="photo-container">
         <Photo url={staticImage} loadedFrom="center" className="shitter" />
         {movingImage && <Photo key={+new Date()} url={movingImage.image} loadedFrom={movingImage.direction} id="animated" />}
-        {/* {imageQueue.map((value,index) =>
-                    <Photo url={index === 0 ? photos[view][index] : photos[view][newIndex]} key={value} loadedFrom={value} />
-                )} */}
       </div>
     </div>
 
   );
 };
+
+PhotoReel.propTypes = {
+  index: PropTypes.number.isRequired,
+  newIndex: PropTypes.number.isRequired,
+  view: PropTypes.string.isRequired,
+  photos: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
+  setIndex: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = (state) => ({
   index: state.slideshow.slideshowIndex,
   newIndex: state.slideshow.newIndex,

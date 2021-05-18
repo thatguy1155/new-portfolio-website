@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PanelText from './PanelText';
 import Line from './Line';
@@ -31,14 +32,19 @@ const Panel = (props) => {
 
   return (
     <div>
-      <button className="panel">
+      <button className="panel" type="button" onClick={reroute}>
         <PanelText mode={mode} />
         <Line mode={mode} />
-        <img src={mode === 'fox' ? Fox : Saola} alt={mode === 'fox' ? 'Fox' : 'Saola'} className={mode === 'fox' ? 'panel-image fox' : 'panel-image saola'} onLoad={() => setLoading()} onClick={reroute} />
+        <img src={mode === 'fox' ? Fox : Saola} alt={mode === 'fox' ? 'Fox' : 'Saola'} className={mode === 'fox' ? 'panel-image fox' : 'panel-image saola'} onLoad={() => setLoading()} />
       </button>
     </div>
   );
 };
 
+Panel.propTypes = {
+  mode: PropTypes.string.isRequired,
+  homepageLoading: PropTypes.func.isRequired,
+  selectPage: PropTypes.func.isRequired,
+};
 const mapDispatchToProps = { homepageLoading, selectPage };
 export default connect(null, mapDispatchToProps)(Panel);

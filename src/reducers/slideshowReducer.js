@@ -1,7 +1,6 @@
 import {
   SETINDEX, SETNEWINDEX, SETPROJECTVIEW, IMAGELOADED,
 } from '../actions/types';
-import { setHasLoaded } from '../actions/pageActions';
 
 const initialState = {
   slideshowView: {
@@ -68,28 +67,30 @@ const initialState = {
 };
 
 const pageReducer = (state = initialState, action) => {
-  // when you get an action, evaluate which kind of action it is
   switch (action.type) {
-    // if you get the action type of FETCH_USERS, return the state with the items from there
-    case SETINDEX:
+    case SETINDEX: {
       const selectedIndex = action.payload;
       return {
         ...state,
         slideshowIndex: selectedIndex,
       };
-    case SETNEWINDEX:
+    }
+    case SETNEWINDEX: {
       const newSelectedIndex = action.payload;
       return {
         ...state,
         newIndex: newSelectedIndex,
       };
-    case SETPROJECTVIEW:
+    }
+    case SETPROJECTVIEW: {
       const newProjectView = action.payload;
       return {
         ...state,
         selectedView: newProjectView,
       };
-    case IMAGELOADED:
+    }
+    case IMAGELOADED: {
+      // here there is an array of all the images that are loaded.
       const url = action.payload;
       let loadedImageCount = state.loadedImageIndex;
       if (url !== 'void' && !loadedImageCount.includes(url)) {
@@ -110,7 +111,7 @@ const pageReducer = (state = initialState, action) => {
         loadedImageIndex: loadedImageCount,
         loadedImageStatus: finality,
       };
-
+    }
     default:
       return state;
   }

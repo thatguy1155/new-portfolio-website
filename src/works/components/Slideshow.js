@@ -1,17 +1,11 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import MainDisplay from './MainDisplay';
 import SlideshowText from './SlideshowText';
 import SlideshowTitle from './SlideshowTitle';
 import SlideshowNavContent from './SlideshowNavContent';
 import ExternalLink from './ExternalLink';
-import Loading from '../../components/Loading';
 
-export default function Slideshow(props) {
-//     useEffect(() => {
-  //         console.log(hasLoaded)
-  //     },[hasLoaded])
-
+export default function Slideshow() {
   return (
     <div>
       <div className="slideshow-container">
@@ -22,9 +16,7 @@ export default function Slideshow(props) {
         </div>
         <ExternalLink />
         <SlideshowText />
-
       </div>
-
     </div>
   );
 }

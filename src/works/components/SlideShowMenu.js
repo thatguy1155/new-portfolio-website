@@ -1,42 +1,22 @@
-import React, { useEffect } from 'react';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
-  setProjectView, setNewIndex, setIndex, imageLoaded,
+  setProjectView, setNewIndex, setIndex, setImageLoaded,
 } from '../../actions/slideshowActions';
 import { setHasLoaded } from '../../actions/pageActions';
 
-const useStyles = makeStyles({
-  root: {
-    width: '100%',
-    maxWidth: 300,
-  },
-  selected: {
-    color: 'white',
-  },
-  unselected: {
-    color: 'green',
-  },
-});
-
 const SlideShowMenu = (props) => {
   const {
-    view, setProjectView, setIndex, setNewIndex, setHasLoaded, imageLoaded,
+    view, setProjectView, setIndex, setNewIndex, setHasLoaded, setImageLoaded,
   } = props;
-  const classes = useStyles();
-
-  useEffect(() => {
-    // console.log(view)
-  }, [view]);
 
   const clickHandler = (clickedProject) => {
-    // console.log(clickedProject);
     setProjectView(clickedProject);
     setNewIndex(0);
     setIndex(0);
     setHasLoaded(false);
-    imageLoaded('void');
+    setImageLoaded('void');
   };
 
   const slideshowPages = {
@@ -49,8 +29,8 @@ const SlideShowMenu = (props) => {
 
   return (
     <div className="side-menu-button-container">
-      {Object.keys(slideshowPages).map((key, index) => (
-        <button className="side-menu-button" key={key + slideshowPages[key]} onClick={() => clickHandler(key)}>
+      {Object.keys(slideshowPages).map((key) => (
+        <button type="button" className="side-menu-button" key={key + slideshowPages[key]} onClick={() => clickHandler(key)}>
           <h3 className={view === key ? 'selected-button' : 'unselected-button'}>
             {slideshowPages[key]}
           </h3>
@@ -61,11 +41,20 @@ const SlideShowMenu = (props) => {
   );
 };
 
+SlideShowMenu.propTypes = {
+  view: PropTypes.string.isRequired,
+  setProjectView: PropTypes.func.isRequired,
+  setIndex: PropTypes.func.isRequired,
+  setNewIndex: PropTypes.func.isRequired,
+  setHasLoaded: PropTypes.func.isRequired,
+  setImageLoaded: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = (state) => ({
   view: state.slideshow.selectedView,
 });
 const mapDispatchToProps = {
-  setProjectView, setNewIndex, setIndex, setHasLoaded, imageLoaded,
+  setProjectView, setNewIndex, setIndex, setHasLoaded, setImageLoaded,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SlideShowMenu);

@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import { connect } from 'react-redux';
 import { ReactComponent as J } from '../assets/J.svg';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     width: '100%',
     height: '100%',
@@ -29,12 +29,12 @@ const Loading = (props) => {
         <J fill="#02075d" stroke="#02075d" className="j j-blue" />
       </div>
 
-      {/* <CircularProgress /> */}
     </div>
-    // <div className={!hasLoaded ? classes.root : classes.hide}>
-    //   <CircularProgress />
-    // </div>
   );
+};
+
+Loading.propTypes = {
+  hasLoaded: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = (state) => ({

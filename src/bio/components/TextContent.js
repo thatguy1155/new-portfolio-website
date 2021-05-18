@@ -10,7 +10,7 @@ export default function TextContent() {
   return (
     <div className="home-text">
       <h2 className="title">Bio</h2>
-      {textContent.map((item, index) => (
+      {textContent.map((item) => (
         <Typography variant="body1" key={uuidv4()}>
           {item}
         </Typography>

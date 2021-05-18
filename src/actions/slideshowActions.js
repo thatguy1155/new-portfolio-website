@@ -22,7 +22,7 @@ export const setProjectView = (postData) => (dispatch) => {
   });
 };
 
-export const imageLoaded = (postData) => (dispatch) => {
+export const setImageLoaded = (postData) => (dispatch) => {
   dispatch({
     type: IMAGELOADED,
     payload: postData,

@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Typography } from '@material-ui/core';
 
 const SlideshowTitle = (props) => {
   const { title, view } = props;
@@ -11,6 +11,11 @@ const SlideshowTitle = (props) => {
       </h1>
     </div>
   );
+};
+
+SlideshowTitle.propTypes = {
+  view: PropTypes.string.isRequired,
+  title: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
 const mapStateToProps = (state) => ({

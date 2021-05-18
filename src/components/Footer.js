@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import FooterIcons from './FooterIcons';
 import FooterText from './FooterText';
-import { ReactComponent as Line } from '../assets/line.svg';
 
 const Footer = (props) => {
   const { selectedContact } = props;
@@ -11,6 +11,7 @@ const Footer = (props) => {
     phone: '(+82) 010 3145 1150',
     linkedin: 'https://www.linkedin.com/in/james-glass-a87190bb/',
     kakao: 'thatguy1155',
+    none: 'none',
   };
 
   const textParser = () => {
@@ -20,7 +21,7 @@ const Footer = (props) => {
     return contactInfo[selectedContact];
   };
 
-  const colorParser = () => (selectedContact ? '#101b13' : '#6a7f7a');
+  const colorParser = () => (selectedContact !== 'none' ? '#101b13' : '#6a7f7a');
 
   return (
     <div className="footer">
@@ -30,6 +31,11 @@ const Footer = (props) => {
     </div>
   );
 };
+
+Footer.propTypes = {
+  selectedContact: PropTypes.string.isRequired,
+};
+
 const mapStateToProps = (state) => ({
   selectedContact: state.footer.selectedContact,
 });

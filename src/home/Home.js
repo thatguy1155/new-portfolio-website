@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Panel from './components/Panel';
 import Loading from '../components/Loading';
 import { setHasLoaded } from '../actions/pageActions';
 import './Home.scss';
-import { connect } from 'react-redux';
 
 const Home = (props) => {
-  const { hasLoaded, homeLoaded, setHasLoaded } = props;
+  const { hasLoaded, setHasLoaded } = props;
 
   useEffect(() => {
     setHasLoaded(false);
@@ -39,4 +40,8 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = { setHasLoaded };
 
+Home.propTypes = {
+  hasLoaded: PropTypes.bool.isRequired,
+  setHasLoaded: PropTypes.func.isRequired,
+};
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

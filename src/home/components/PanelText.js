@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function PanelText(props) {
   const { mode } = props;
@@ -12,3 +13,6 @@ export default function PanelText(props) {
     </div>
   );
 }
+PanelText.propTypes = {
+  mode: PropTypes.string.isRequired,
+};

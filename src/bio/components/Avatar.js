@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ImageAvatars = (props) => {
   const classes = useStyles();
-  const { isMobile, setHasLoaded } = props;
+  const { setHasLoaded } = props;
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('sm'));
   useEffect(() => {

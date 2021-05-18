@@ -1,5 +1,6 @@
 import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { ReactComponent as Gmail } from '../assets/gmail.svg';
 import { ReactComponent as KakaoTalk } from '../assets/kakaotalk.svg';
@@ -29,6 +30,12 @@ const FooterIcon = (props) => {
       </IconButton>
     </div>
   );
+};
+
+FooterIcon.propTypes = {
+  mode: PropTypes.string.isRequired,
+  selectedContact: PropTypes.string.isRequired,
+  selectContact: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({

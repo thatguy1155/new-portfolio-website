@@ -11,23 +11,22 @@ const initialState = {
 };
 
 const pageReducer = (state = initialState, action) => {
-  // when you get an action, evaluate which kind of action it is
   switch (action.type) {
-    // if you get the action type of FETCH_USERS, return the state with the items from there
-    case SELECT:
+    case SELECT: {
       const newSelectedPage = action.payload;
       return {
         ...state,
         selectedPage: newSelectedPage,
       };
-    case LOADING:
+    }
+    case LOADING: {
       const loadedResult = action.payload;
       return {
         ...state,
         hasLoaded: loadedResult,
       };
-
-    case HOMEPAGELOADING:
+    }
+    case HOMEPAGELOADING: {
       const homepageLoaded = action.payload;
       const newhLoading = state.homepageLoading;
       newhLoading[homepageLoaded] = true;
@@ -37,7 +36,7 @@ const pageReducer = (state = initialState, action) => {
         homepageLoading: newhLoading,
         hasLoaded: newLoading,
       };
-
+    }
     default:
       return state;
   }

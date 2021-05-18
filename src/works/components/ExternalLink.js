@@ -1,11 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 const ExternalLink = (props) => {
   const { link, view } = props;
-
-  console.log(view);
-
   return (
     <>
       {view !== 'PassByMobile' && (
@@ -16,6 +14,12 @@ const ExternalLink = (props) => {
     </>
   );
 };
+
+ExternalLink.propTypes = {
+  link: PropTypes.objectOf(PropTypes.string).isRequired,
+  view: PropTypes.string.isRequired,
+};
+
 const mapStateToProps = (state) => ({
   link: state.slideshow.slideshowLink,
   view: state.slideshow.selectedView,

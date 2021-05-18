@@ -21,7 +21,7 @@
         "no-unused-vars": "warn",
         "react/prop-types": "warn",
         "react/jsx-filename-extension":"off",
-        "no-shadow":"warn",
+        "no-shadow":"off",
         "react/button-has-type":"warn",
         "no-use-before-define":"warn",
         "import/order":"warn",

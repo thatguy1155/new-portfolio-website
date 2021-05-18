@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Photos from './Photos';
 import PhotoReel from './PhotoReel';
 import { setNewIndex } from '../../actions/slideshowActions';
 import { ReactComponent as Prev } from '../../assets/prev.svg';
@@ -21,6 +21,13 @@ const MainDisplay = (props) => {
       </div>
     </div>
   );
+};
+
+MainDisplay.propTypes = {
+  index: PropTypes.number.isRequired,
+  view: PropTypes.string.isRequired,
+  photos: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
+  setNewIndex: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({

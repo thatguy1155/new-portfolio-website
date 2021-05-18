@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import { Menu, MenuItem } from '@material-ui/core';
-import { Link, BrowserRouter as Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { connect } from 'react-redux';
 import { selectContact } from '../actions/footerActions';
@@ -51,18 +50,14 @@ const ButtonAppBar = (props) => {
   };
   // close the mobile menu
   const handleClose = () => {
-    selectContact(null);
+    selectContact('none');
     setAnchorEl(null);
   };
 
   const handleSelection = (selection) => {
     selectPage(selection);
-    selectContact(null);
+    selectContact('none');
   };
-
-  // useEffect(() => {
-  //   console.log(selected)
-  // },[selected])
 
   return (
     <div className={classes.root}>
@@ -99,6 +94,12 @@ const ButtonAppBar = (props) => {
       </AppBar>
     </div>
   );
+};
+
+ButtonAppBar.propTypes = {
+  selected: PropTypes.string.isRequired,
+  selectPage: PropTypes.func.isRequired,
+  selectContact: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
