@@ -1,9 +1,8 @@
-import { SELCETEDCONTACT } from './types'
+import { SELCETEDCONTACT } from './types';
 
-
-export const selectContact = (postData) => dispatch => {
-    dispatch({
-        type: SELCETEDCONTACT,
-        payload: postData
-    })
-}
+export const selectContact = (postData) => (dispatch) => {
+  dispatch({
+    type: SELCETEDCONTACT,
+    payload: postData,
+  });
+};

@@ -1,22 +1,27 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Typography } from '@material-ui/core';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 const SlideshowTitle = (props) => {
-    const {title,view} = props
-    return (
-        <div>
-            <h1 className="title">
-                {title[view]}
-            </h1>
-        </div>
-    )
-}
+  const { title, view } = props;
+  return (
+    <div>
+      <h1 className="title">
+        {title[view]}
+      </h1>
+    </div>
+  );
+};
 
-const mapStateToProps = state => ({
-    title: state.slideshow.slideshowTitle,
-    view: state.slideshow.selectedView,
-  })
+SlideshowTitle.propTypes = {
+  view: PropTypes.string.isRequired,
+  title: PropTypes.objectOf(PropTypes.string).isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  title: state.slideshow.slideshowTitle,
+  view: state.slideshow.selectedView,
+});
 //   const mapDispatchToProps = {setLoading}
 
-  export default connect(mapStateToProps, null)(SlideshowTitle)
+export default connect(mapStateToProps, null)(SlideshowTitle);
